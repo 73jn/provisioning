@@ -1,0 +1,32 @@
+{
+  "Parameters": {
+    "ThingName": {
+      "Type": "String"
+    },
+    "ThingTypeName": {
+      "Type": "String"
+    },
+    "ThingId": {
+      "Type": "String"
+    }
+  },
+  "Resources": {
+    "thing": {
+      "Type": "AWS::IoT::Thing",
+      "Properties": {
+        "ThingName": {
+          "Ref": "ThingName"
+        },
+        "ThingTypeName": {
+          "Ref": "ThingTypeName"
+        },
+        "AttributePayload": {
+          "version": "v1",
+          "thingId": {
+            "Ref": "ThingId"
+          }
+        }
+      }
+    }
+  }
+}
